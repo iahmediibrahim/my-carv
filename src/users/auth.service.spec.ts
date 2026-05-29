@@ -1,12 +1,8 @@
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { scrypt as _scrypt } from 'crypto';
-import { promisify } from 'util';
 import { AuthService } from './auth.service';
 import { User } from './user.entity';
 import { UsersService } from './users.service';
-
-const scrypt = promisify(_scrypt);
 
 describe('AuthService', () => {
   let service: AuthService;

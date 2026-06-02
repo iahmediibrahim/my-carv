@@ -27,6 +27,7 @@ import { UsersModule } from './users/users.module';
           password: '',
           database: config.get<string>('DB_NAME'),
           synchronize: true,
+          dropSchema: process.env.NODE_ENV === 'test',
           entities: [User, Report],
         };
       },

@@ -57,6 +57,24 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
+## Database Migrations (TypeORM)
+
+This project uses TypeORM for database migrations. Below are the common commands you'll need:
+
+```bash
+# Generate a new migration automatically based on changes in your entities
+$ pnpm typeorm migration:generate migrations/<migration-name> -d data-source.ts
+
+# Create a clean/empty migration file for writing custom SQL
+$ pnpm typeorm migration:create migrations/<migration-name>
+
+# Run all pending migrations
+$ pnpm typeorm migration:run -d data-source.ts
+
+# Revert the most recently executed migration
+$ pnpm typeorm migration:revert -d data-source.ts
+```
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
@@ -96,4 +114,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
 # my-carv
